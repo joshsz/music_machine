@@ -1,6 +1,10 @@
-import boom from 'boom.es6';
-
+import Styles from './style.scss'
+import {BoomBoard} from 'boom.es6'
+let boomBoard = new BoomBoard()
 
 window.addEventListener('load', ()=> {
-  console.log(`boom: ${boom.x()}`);
+  boomBoard.setup()
+  window.boomBoard = boomBoard
 });
+
+console.log(Styles)

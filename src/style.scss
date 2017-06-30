@@ -1,0 +1,33 @@
+@keyframes moveit {
+  from {background-color: white;}
+  to {background-color: red;}
+}
+.sound-button {
+  display: inline-block;
+  margin: 5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  background-color: white;
+  &.playing {
+    background-color: red;
+    animation-name: moveit;
+    animation-duration: 0.3s;
+  }
+}
+#playback {
+  display: none;
+  &.playing {
+    display: block;
+  }
+}
+#rec {
+  display: none;
+  &.recording {
+    display: block;
+  }
+}
+body {
+  background: black;
+  color: #FAA;
+}

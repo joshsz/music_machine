@@ -4,9 +4,27 @@ head
   title Boom tsch
 
 body
-  h1 what up
+  h1 Play dood
+  span(id='rec') rec
+  span(id='playback') playback
   div(id='yaas')
-    input(type='button', value='z', id='b-z')
+    span(class='sound-button', 'data-key'='z', id='b-z', 'data-freq'='523') C
+    span(class='sound-button', 'data-key'='s', id='b-s', 'data-freq'='554') C#
+    span(class='sound-button', 'data-key'='x', id='b-x', 'data-freq'='587') D
+    span(class='sound-button', 'data-key'='d', id='b-d', 'data-freq'='622') D#
+    span(class='sound-button', 'data-key'='c', id='b-c', 'data-freq'='659') E
+    span(class='sound-button', 'data-key'='v', id='b-v', 'data-freq'='698') F
+    span(class='sound-button', 'data-key'='g', id='b-g', 'data-freq'='739') F#
+    span(class='sound-button', 'data-key'='b', id='b-b', 'data-freq'='783') G
+    span(class='sound-button', 'data-key'='h', id='b-h', 'data-freq'='830') G#
+    span(class='sound-button', 'data-key'='n', id='b-n', 'data-freq'='880') A
+    span(class='sound-button', 'data-key'='j', id='b-j', 'data-freq'='932') A#
+    span(class='sound-button', 'data-key'='m', id='b-m', 'data-freq'='987') B
+    span(class='sound-button', 'data-key'=',', id='b-comma', 'data-freq'='1046') C
+    span(class='sound-button', 'data-key'='l', id='b-l', 'data-freq'='1108') C#
+    span(class='sound-button', 'data-key'='.', id='b-period', 'data-freq'='1174') D
+    span(class='sound-button', 'data-key'=';', id='b-semi', 'data-freq'='1244') D#
+    span(class='sound-button', 'data-key'='/', id='b-slash', 'data-freq'='1318') E
 
   script(src='bundle.js')
 

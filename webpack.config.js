@@ -14,7 +14,21 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.es6$/,
+        test: /\.(aif|wav)$/,
+        loader: ['file-loader'],
+      },
+      {
+        test: /\.scss$/,
+        use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+        }, {
+          loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "sass-loader" // compiles Sass to CSS
+        }]
+      },
+      {
+        test: /\.(js|es6)$/,
         include: [path.resolve(__dirname, 'src')],
         //issuer: { test, include, exclude },
         enforce: 'pre',
@@ -35,6 +49,10 @@ module.exports = {
       path.resolve(__dirname, 'src'),
     ],
     extensions: ['.js', '.json', '.es6', '.pug', '.css', '.scss'],
+  },
+
+  externals: {
+    timbre: 'T',
   },
   
   performance: {
