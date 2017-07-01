@@ -9,7 +9,7 @@ class BoomButton {
     this.el = element
     let freq = element.getAttribute('data-freq')
     this.key = element.getAttribute('data-key')
-    this.audio = timbre('pulse', {freq: parseInt(freq), mul:0.5})
+    this.audio = timbre('fami', {freq: parseInt(freq), mul:0.1})
     //this.audio = new Audio(Piano)
     //this.audio.preservesPitch = false
     //this.audio.playbackRate = this.rate
@@ -37,14 +37,14 @@ class Tracker {
     this.curChunk = []
     this.recording = false
     this.intervalDef = {interval: 'BPM120 L16'}
-    var sine1 = timbre("sin", {freq:440, mul:0.5});
-    var sine2 = timbre("saw", {freq:880, mul:0.5});
+    var sine1 = timbre("sin", {freq:440, mul:0.2});
+    var sine2 = timbre("saw", {freq:880, mul:0.2});
     this.interval = timbre('interval', this.intervalDef, (count) => {
       this.chunks.push(this.curChunk)
       this.curChunk = []
 
       if(count % 4 == 0){
-        timbre("perc", {r:500}, sine1, sine2).on("ended", function() { this.pause(); }).bang().play();
+        timbre("perc", {r:30}, sine1, sine2).on("ended", function() { this.pause(); }).bang().play();
       }
 
     });
